@@ -1,0 +1,35 @@
+{{ define "main" }}
+<article class="max-w-3xl mx-auto shadow p-6">
+    {{ if .Params.image }}
+    <div class="w-full h-64 mb-4 mx-auto">
+        <img
+            src="{{ .Params.image }}"
+            alt="{{ .Title }}"
+            class="mx-auto object-contain w-auto h-full"
+        />
+    </div>
+    {{ end }} {{ if .Params.proof_url }}
+    <div class="flex justify-center">
+        <a
+            href="{{ .Params.proof_url }}"
+            class="text-customBlueDark hover:text-blue-800"
+            target="_blank"
+            >View Certificate</a
+        >
+    </div>
+    {{ end }}
+    <header class="mb-4">
+        <h1 class="text-3xl font-bold text-gray-300">{{ .Title }}</h1>
+        {{ if .Params.issuer }}
+        <p class="text-gray-400">
+            Issued by: <strong>{{ .Params.issuer }}</strong>
+        </p>
+        {{ end }}
+        <p class="text-sm text-gray-400">
+            Earned on {{ .Date.Format "January 2, 2006" }}
+        </p>
+    </header>
+
+    <section class="prose">{{ .Content }}</section>
+</article>
+{{ end }}

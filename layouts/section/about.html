@@ -1,0 +1,57 @@
+{{ define "main" }}
+<section class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold">{{ .Title }}</h1>
+    <div class="prose mb-6">{{ .Content }}</div>
+
+    <!-- Display List of Certifications -->
+    <h2 class="text-2xl font-semibold">Technology Certifications</h2>
+
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range sort .Pages "Date" "asc" }} {{ if .Params.enable }}
+        <div
+            class="border-2 border-customBlueDark rounded-lg shadow-lg overflow-hidden"
+        >
+            <a href="{{ .Permalink }}" class="block">
+                <!-- Certification Image (if available) -->
+                {{ if .Params.image }}
+                <div
+                    class="w-full h-48 flex items-center justify-center bg-white"
+                >
+                    <img
+                        src="{{ .Params.image }}"
+                        alt="{{ .Title }}"
+                        class="object-contain w-auto h-full"
+                    />
+                </div>
+                {{ else }}
+                <!-- Fallback if no image -->
+                <div
+                    class="w-full h-48 bg-gray-300 flex items-center justify-center"
+                >
+                    <span class="text-gray-400">No Image Available</span>
+                </div>
+                {{ end }}
+
+                <!-- Certification Title -->
+                <div class="pt-1">
+                    <h2 class="text-lg font-semibold text-center m-0">
+                        {{ .Title }}
+                    </h2>
+                </div>
+                <!-- Proof link (if available) -->
+                {{ if .Params.proof_url }}
+                <p class="pb-1 text-center">
+                    <a
+                        href="{{ .Params.proof_url }}"
+                        class="text-customBlueLight hover:text-customBlueDark"
+                        target="_blank"
+                        >View Certificate</a
+                    >
+                </p>
+                {{ end }}
+            </a>
+        </div>
+        {{ end }} {{ end }}
+    </div>
+</section>
+{{ end }}

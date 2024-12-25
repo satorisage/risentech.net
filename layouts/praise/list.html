@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold">{{ .Title }}</h1>
+    <div class="mb-6">{{ .Content }}</div>
+
+    <div class="">
+        {{ range .Pages }}
+        <div class="border-2 rounded border-customBlueDark p-2 mb-4">
+            <h2 class="text-2xl font-semibold">{{ .Params.person }}</h2>
+            <h3 class="text-lg">{{ .Title }}</h3>
+            <p>{{ .Summary }}</p>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
