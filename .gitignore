@@ -11,12 +11,16 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build output
-dist/
-build/
+dist
+build
 
 # Hugo-related outputs
-public/
-resources/
+public
+resources
+.hugo_build.lock
 
 # Environment variables
 .env
+
+# Mac
+.DS_Store
