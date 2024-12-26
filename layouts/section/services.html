@@ -5,10 +5,10 @@
 
     <div class="">
         {{ range .Pages }}
-        <div class="border-2 rounded border-customBlueDark p-2 mb-4">
+        <div class="border-2 rounded border-customBlueDark p-4 mb-4">
             <h2 class="text-2xl font-semibold">{{ .Title }}</h2>
             <h3>{{ .Params.price }}</h3>
-            <p>{{ .Summary }}</p>
+            <p class="p-2">{{ .Summary }}</p>
         </div>
         {{ end }}
     </div>
