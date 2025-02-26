@@ -36,9 +36,9 @@
         <nav class="flex flex-col space-y-2 p-4">
             <a href="/" class="{{ if .IsHome }}underline font-bold{{ else }}hover:underline{{ end }}">Home</a>
             <a href="/services" class="{{ if eq .RelPermalink "/services/" }}underline font-bold{{ else }}hover:underline{{ end }}">Services</a>
-            <a href="/about" class="{{ if eq .RelPermalink "/services/" }}underline font-bold{{ else }}hover:underline{{ end }}">About</a>
-            <a href="/praise" class="{{ if eq .RelPermalink "/services/" }}underline font-bold{{ else }}hover:underline{{ end }}">Praise</a>
-            <a href="/contact" class="{{ if eq .RelPermalink "/services/" }}underline font-bold{{ else }}hover:underline{{ end }}">Contact</a>
+            <a href="/about" class="{{ if eq .RelPermalink "/about/" }}underline font-bold{{ else }}hover:underline{{ end }}">About</a>
+            <a href="/praise" class="{{ if eq .RelPermalink "/praise/" }}underline font-bold{{ else }}hover:underline{{ end }}">Praise</a>
+            <a href="/contact" class="{{ if eq .RelPermalink "/contact/" }}underline font-bold{{ else }}hover:underline{{ end }}">Contact</a>
         </nav>
     </div>
 </header>
