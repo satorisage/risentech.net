@@ -13,7 +13,7 @@
         </nav>
 
         <!-- Mobile Menu Button -->
-        <button id="menu-toggle" class="block md:hidden">
+        <button id="menu-toggle" class="block md:hidden" onclick="toggleMenu()">
             <svg
                 class="w-6 h-6"
                 fill="none"
@@ -32,7 +32,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-blue-700">
+    <div id="mobile-menu" class="hidden bg-blue-700">
         <nav class="flex flex-col space-y-2 p-4">
             <a href="/" class="{{ if .IsHome }}underline font-bold{{ else }}hover:underline{{ end }}">Home</a>
             <a href="/services" class="{{ if eq .RelPermalink "/services/" }}underline font-bold{{ else }}hover:underline{{ end }}">Services</a>
